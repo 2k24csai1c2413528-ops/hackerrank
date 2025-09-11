@@ -1,6 +1,6 @@
 int minimumLoss(int price_count, long* price) {
     House arr[price_count];
-    for (inti i = 0; i < price_count; i++) {
+    for (int i = 0; i < price_count; i++) {
         arr[i].price = price[i];
         arr[i].year = i; 
     }
