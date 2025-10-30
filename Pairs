@@ -1,0 +1,20 @@
+int comp(const void *a, const void *b) {
+    return (*(int*)b - *(int*)a);
+}
+
+int pairs(int k, int arr_count, int* arr) {
+    int p1 = 0;
+    int p2 = 1;
+    int count = 0;
+    qsort(arr, arr_count, sizeof(int), comp);
+    while(p2 < arr_count) {
+        long long d = arr[p1] - arr[p2];
+        ++p2;
+        if(d == k) ++count;
+        else if (d > k || p2 >= arr_count) {
+            ++p1;
+            p2 = p1 + 1;
+        }
+    }
+    return count;
+}
